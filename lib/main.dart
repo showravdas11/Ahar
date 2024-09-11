@@ -1,8 +1,12 @@
 import 'package:ahar/Screens/LoginScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarColor: Color.fromARGB(255, 0, 0, 0),
+  ));
 }
 
 class MyApp extends StatelessWidget {

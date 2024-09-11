@@ -14,13 +14,13 @@ class _TotalDeliveryCardState extends State<TotalDeliveryCard> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Container(
-      height: screenHeight * 0.25,
+      height: screenHeight * 0.08,
       child: Stack(
         clipBehavior: Clip.none,
         alignment: Alignment.center,
         children: [
           Positioned(
-            bottom: screenHeight * 0.18,
+            bottom: 0,
             child: Container(
               padding: const EdgeInsets.all(20),
               width: screenWidth * 0.9,
