@@ -100,7 +100,7 @@ class DeliveryCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 5,
                       ),
                       Row(
@@ -108,7 +108,7 @@ class DeliveryCard extends StatelessWidget {
                         children: [
                           Row(
                             children: [
-                              Icon(
+                              const Icon(
                                 Icons.pedal_bike,
                                 size: 16,
                                 color: Colors.green,

@@ -98,32 +98,66 @@ class _DeliveryProfileState extends State<DeliveryProfile> {
 
             // Delivery List Section
             Expanded(
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
-                decoration: BoxDecoration(
-                  color: Color(0xFFF4F4F4),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(40),
-                    topRight: Radius.circular(40),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8),
+                child: Container(
+                  padding: const EdgeInsets.only(
+                      top: 15, left: 8, right: 8, bottom: 0),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 236, 236, 236),
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(26),
+                      topRight: Radius.circular(26),
+                    ),
+                  ),
+                  child: Column(
+                    crossAxisAlignment:
+                        CrossAxisAlignment.start, // Align content to start
+                    children: [
+                      Center(
+                        child: Container(
+                          height: 4,
+                          width: 100,
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD9D9D9),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10),
+                        child: const Text(
+                          'Delivery List',
+                          style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 5),
+                      Expanded(
+                        child: ListView.builder(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 3, vertical: 0),
+                          itemCount: widget.deliveries.length,
+                          itemBuilder: (context, index) {
+                            return DeliveryCard(
+                              name: widget.deliveries[index]['name'],
+                              foodItem: widget.deliveries[index]['foodItem'],
+                              time: widget.deliveries[index]['time'],
+                              distance: widget.deliveries[index]['distance'],
+                              image: widget.deliveries[index]['image'],
+                            );
+                          },
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                child: ListView.builder(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 3, vertical: 0),
-                  itemCount: widget.deliveries.length,
-                  itemBuilder: (context, index) {
-                    return DeliveryCard(
-                      name: widget.deliveries[index]['name'],
-                      foodItem: widget.deliveries[index]['foodItem'],
-                      time: widget.deliveries[index]['time'],
-                      distance: widget.deliveries[index]['distance'],
-                      image: widget.deliveries[index]['image'],
-                    );
-                  },
-                ),
               ),
-            ),
+            )
           ],
         ),
       ),
